@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1</title>
+	
+	<style>
+		body{font-family: arial;}
+		* {margin: 0; padding: 0;}
+
+		.test-one{overflow: hidden; margin: 0 auto; }
+		.wrapper{max-width:900px;margin: 0 auto;}
+		.ans-block{background:  #ddd;margin: 10px;padding:  10px;display:  block;overflow:  hidden;}
+		.ans-block .answer, #ansdiv,#ansdiv2{color: #333;font-size: 14px;display:  inline-block;width: 80%;float:  right;padding: 10px;}
+		.ans-block .answer, #ansdiv{ display: none; }
+		.ans-btn{cursor: pointer;display: inline-block;color: #FFF;background: #ea4545;border-radius: 4px;padding: 10px;font-size: 14px;float:  left;}
+		#clickme{cursor: pointer;padding: 5px;color: #fff;background-color: #ea4545;border-radius: 4px;text-align: center;display: inline-block;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+
+		<div class="assntabs">
+
+			<div class="test-one" id="assignment-one">
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans1"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans2"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans3"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans4"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans5"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans6"></p>
+				</div>
+				<div class="ans-block">
+					<p class="ans-btn">See Answer</p>
+					<div id="ansdiv"></div>
+				</div>
+				<div class="ans-block">
+					<div id="clickme">Click Here</div>
+					<div id="ansdiv2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+
+		var acc = document.getElementsByClassName("ans-btn");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				this.innerHTML = "Hide Me";
+				var answer = this.nextElementSibling;
+				if (answer.style.display === "block") {
+					answer.style.display = "none";
+					this.innerHTML = "See Answer";
+				} else {
+					answer.style.display = "block";
+				}
+			});
+		}
+
+
+		var carName = "Honda City";
+		document.getElementById("ans1").innerHTML = carName;
+		var num = 150;
+		document.querySelector("#ans2").innerHTML = num;
+		var x = 5, y = 10;
+		document.querySelector("#ans3").innerHTML = x + y;
+		var z = x + y;
+		document.querySelector("#ans4").innerHTML = z;
+		var firstName = "John", lastName = "Doe", age = 35;
+		document.querySelector("#ans5").innerHTML = firstName + " " + lastName + " " +  "age:" + age;
+		const DOB = calculateAge();
+		function calculateAge(){
+			age = 25;
+			return age;
+		}
+		document.querySelector("#ans6").innerHTML = DOB;
+		var name = "Name is Vasanti Pawar";
+		document.getElementById("ansdiv").innerHTML = name;
+		document.querySelector("#clickme").addEventListener("click",function(){
+			var person = prompt("Enter your name");
+			if (person != null) {
+				document.getElementById("ansdiv2").innerHTML =
+				"Hey " + person + "! How's Life?";
+			}
+		});
+</script>
+</body>
+</html>
