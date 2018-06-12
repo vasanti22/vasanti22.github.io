@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+	
+	<style>
+	body{font-family: georgia;}
+	* {margin: 0; padding: 0;}
+	.title {font-size: 38px; text-align: center; font-weight: 600; padding: 30px 0; } 
+	.test-two{overflow: hidden; margin: 0 auto; }
+	.wrapper{max-width:900px;margin: 0 auto;}
+	.ans-block{background:  #ddd;margin: 10px;padding:  10px;display:  block;overflow:  hidden;}
+	.ans-block .answer, #ansdiv,#ansdiv2{color: #fff;font-size: 14px;display:  inline-block;padding: 10px;background:  #555;margin:  20px 0;border-radius:  5px;}
+	.ans-block .answer, #ansdiv{ display: none; }
+	.ans-btn{cursor: pointer;display: inline-block;color: #FFF;background: #ea4545;border-radius: 4px;padding: 10px;font-size: 14px;font-family:  arial;font-weight:  600;}
+	.click-btn{cursor: pointer;padding: 5px;color: #fff;background-color: #ea4545;border-radius: 4px;text-align: center;display: inline-block;}
+	.question {font-size: 17px; font-weight: 700; margin: 10px 0; } 
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="title">Assignment 2</div>
+
+		<div class="assntabs">
+			<div class="test-two" id="assignment-one">
+				<div class="ans-block">
+					<div class="question"> Question 1. var counter = 0; counter++; ++counter; alert( counter ); What will alert this and why? </div> 
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans1"></p>
+					
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 2. var n = 2; n *= 3 + 5; alert( n ); What will alert this and why? </div> 
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans2">
+						
+					</p>
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 3. What are the final values of all variables a, b, c and d after the code below? var a = 1, b = 1; var c = ++a; var d = b++; </div> 
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans3">
+
+					</p>
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 4. What are the values of a and x after the code below?
+					var a = 2; var x = 1 + (a *= 2);</div> 
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans4"></p>
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 5. Find greatest among 4 numbers</div> 
+					<p class="ans-btn">See Answer</p>
+					<p class="answer" id="ans5"></p>
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 6.  Rewrite this if using the ternary operator '?':
+						if (a + b < 4) { result = 'Below'; } else { result = 'Over'; }</div> 
+						<p class="ans-btn">See Answer</p>
+						<p class="answer" id="ans6"></p>
+					</div>
+					<div class="ans-block">
+						<div class="question"> Question 7. Rewrite following to switch
+						var a = +prompt('a?', ''); if (a == 0) { alert( 0 ); } if (a == 1) { alert( 1 ); } if (a == 2 || a == 3) { alert( '2,3' ); } </div>
+						<div id="clickme" class="click-btn">Click Here</div>
+						<div id="ansdiv1"></div>
+					</div>
+					<div class="ans-block">
+						<div class="question"> Question 8. Write a condition to check if the given age is of a teenager or no. </div>
+						<div id="clickme1" class="click-btn">Click Here</div>
+						<div id="ansdiv2"></div>
+					</div>
+					<div class="ans-block">
+						<div class="question"> Question 9. Print/alert todays Day using switch & if-else. Also print a message saying “It is a weekend” if Saturday or Sunday! or be creative. </div>
+						<div id="clickme2" class="click-btn">Click Here</div>
+						<div id="ansdiv3"></div>
+					</div>
+					<div class="ans-block">
+						<div class="question"> Question 10. Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity. </div>
+						<div id="clickme3" class="click-btn">Click to check what time it is!</div>
+						<div id="ansdiv4"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+
+
+			var acc = document.getElementsByClassName("ans-btn");
+			var i;
+			for (i = 0; i < acc.length; i++) {
+				acc[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+					this.innerHTML = "Hide Me";
+					var answer = this.nextElementSibling;
+					if (answer.style.display === "block") {
+						answer.style.display = "none";
+						this.innerHTML = "See Answer";
+					} else {
+						answer.style.display = "block";
+					}
+				});
+			}
+
+
+
+			document.getElementById("ans1").innerHTML = "Alert will be 2." + "<br>" + "var counter = 0; counter++; ++counter; "+ "<br>" + "alert(counter);  //alert is 0; " + "<br>"  + "<br>" + "alert(counter++); //alert is 1; <br>" + "<br>" + "	alert(++counter); //alert is 2;";
+
+			document.getElementById("ans2").innerHTML = "Alert will be 16." + "<br>" + "var n = 2; "+ "<br>" + "n *= 3 + 5; //   n *= 8 -->   n = 2 * 8 " ;
+
+			var a = 1, b = 1; var c = ++a; var d = b++; 
+			document.getElementById("ans3").innerHTML = "a= " + a +"<br>" + "b= "+ b +"<br>" + "c= " + c +"<br>" + "d =" + d;
+
+
+			var a = 2; 
+			var x = 1 + (a *= 2);
+			document.getElementById("ans4").innerHTML = "a="  + a + "    // a= 2 * 2" + "<br>" +  "x=" + x + "   // x= 1+4";
+
+			document.getElementById("ans5").innerHTML = Math.max(5, 10, 25, 20);
+
+			var a = 1, b = 2
+			var z = a + b < 4 ? 'Below' : 'Over';
+			document.getElementById("ans6").innerHTML = z;
+
+
+			document.querySelector("#clickme").addEventListener("click",function(){
+
+				var a = +prompt('a?', '');
+
+				switch(a){
+					case 0:
+					alert(0);
+					break;
+
+					case 1:
+					alert(1);
+					break;
+
+					case 2:
+					case 3:
+					alert('2,3');
+					break;
+
+					default:
+					alert('unkown value');
+					break;
+				}
+			});
+
+			document.querySelector("#clickme1").addEventListener("click",function(){
+				var age = prompt("Enter your age");
+				if (age != null) {
+
+					if( age > 12 && age < 19){
+						document.getElementById("ansdiv2").innerHTML = "Heyy ya!!, you are a Teenager!";
+					}else if( age < 13){
+
+						document.getElementById("ansdiv2").innerHTML = "You are a kid!";
+					}else{
+
+						document.getElementById("ansdiv2").innerHTML = "Ohhh... No..";
+					}
+
+					
+				}
+			});
+			document.querySelector("#clickme2").addEventListener("click",function(){
+
+				var todayDate = new Date();
+				var day = todayDate.getDay();
+
+				switch(day){
+					case 0:
+					case 6:
+					alert('Switch: Woooww... Its a Weekend!!! ');
+					break;
+
+					case 1:
+					alert('Switch: Noooo... Monday :( ');
+					break;
+
+					case 2:
+					alert("Switch: Hell.. It's Tuesday only");
+					break;
+
+					case 3:
+					alert('Switch: Wednesday...');
+					break;
+
+					case 4:
+					alert('Switch: Thursday, weekend is coming!');
+					break;
+
+					case 5:
+					alert('Switch: Finally, its FRIDAY...!!');
+					break;
+				}
+
+
+				if( day == 0 || day == 6){
+					alert('Woooww... Its a Weekend!!!');
+				}else if(day == 1){
+					alert('Noooo... Monday :(');
+				}else if(day == 2){
+					alert("Hell.. It's Tuesday only");	
+				}else if(day == 3){
+					alert(' Wednesday...');
+				}else if(day == 4){
+					alert('Thursday, weekend is coming!');
+				}else if(day == 5){
+					alert('Finally, its FRIDAY...!!');
+				}
+			});
+
+			document.querySelector("#clickme3").addEventListener("click",function(){
+				var date = new Date();
+				var hour = date.getHours();
+
+				if( hour >= 0 && hour < 16){
+					setcolor = 'yellow';
+					alert("Good Mornig !!")
+				}else if( hour >= 16 && hour < 19){
+					setcolor = 'blue';
+					alert("Good Evening !!")
+				}else{
+					setcolor = 'black';
+					alert("Good Night !!")
+				}
+
+				document.getElementsByTagName('body')[0].style.backgroundColor = setcolor;
+			});	
+			
+		</script>
+	</body>
+	</html>
