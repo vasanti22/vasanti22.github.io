@@ -26,7 +26,7 @@
 		<div class="assntabs">
 			<div class="test-two" id="assignment-one">
 				<div class="ans-block">
-					<div class="question"> Question 1. Q1:What is the difference between following 2 functions if any?</div> 
+					<div class="question"> Question 1. What is the difference between following 2 functions if any?</div> 
 					
 					
 					<pre>
@@ -147,11 +147,23 @@ var func_expr = function() {
 		
 	</div>
 	<div class="ans-block">
-	<div class="question"> Question 10. Make 3 level navigation menu, using javascript. use hover/click to show child level menus.
-</div>
-	<a class="ans-btn" href="https://vasanti22.github.io/assmn2.html" target="_blank">See Answer</a>
-	
-		
+		<div class="question"> Question 10. Make 3 level navigation menu, using javascript. use hover/click to show child level menus.
+		</div>
+		<a class="ans-btn" href="https://vasanti22.github.io/assmn2.html" target="_blank">See Answer</a>	
+	</div>
+	<div class="ans-block">
+		<div class="question"> Question 11. Implement IIFE - Immediately Invoked Function Expression.</div>
+		<pre>
+			<code>
+var userName = "Vasanti Pawar"; 
+(function (name) 
+{ 
+	function display(name) 
+	{ console.log(name); 
+	} display(name); 
+})(userName);
+			</code>
+		</pre>	
 	</div>
 </div>
 
@@ -289,8 +301,15 @@ var func_expr = function() {
 		alert( 'Fibonacci Series: ' + fibon(digit) );
 
 	});
-
 	
+//IIFE
+	var userName = "Vasanti Pawar"; 
+(function (name) 
+{ 
+	function display(name) 
+	{ console.log(name); 
+	} display(name); 
+})(userName);
 
 </script>
 </body>
