@@ -10,12 +10,12 @@
 	.test-two{overflow: hidden; margin: 0 auto; }
 	.wrapper{max-width:900px;margin: 0 auto;}
 	.ans-block{background:  #ddd;margin: 10px;padding:  10px;display:  block;overflow:  hidden;}
-	.ans-block .answer, #ansdiv,#ansdiv2{color: #fff;font-size: 14px;display:  inline-block;padding: 10px;background:  #555;margin:  20px 0;border-radius:  5px;}
-	.ans-block .answer, #ansdiv{ display: none; }
+	.ans-block .answer, #ansdiv{color: #fff;font-size: 14px;display:  inline-block;padding: 10px;background:  #555;margin:  20px 0;border-radius:  5px;}
+	.ans-block .answer{ display: none; }
 	.ans-btn{cursor: pointer;display: inline-block;color: #FFF;background: #ea4545;border-radius: 4px;padding: 10px;font-size: 14px;font-family:  arial;font-weight:  600;}
 	.click-btn{cursor: pointer;padding: 5px;color: #fff;background-color: #ea4545;border-radius: 4px;text-align: center;display: inline-block;}
 	.question {font-size: 17px; font-weight: 700; margin: 10px 0; } 
-	#ansdiv3 {border-radius: 0; overflow-y: auto; background: #000; } 
+	
 	
 </style>
 </head>
@@ -55,7 +55,7 @@ function checkAge(age)
 					</pre>
 
 
-					<div class="answer">
+					<div id="ansdiv">
 						1. Both function's are same. It will check if the age is grater than 18years return true. Otherwise, confirm 'Did parents allow you?' <br>
 						2. First function is pure 'if-else' statement, when "if block" condition fails it will execute "else block".
 						3. In second function only "if block" is written if condition is false it will execute confirm. There is no need of "else block" as its checking only one condition.
@@ -99,7 +99,7 @@ return (age > 18) ? true : confirm('Did parents allow you?');
 </div>
 <div class="ans-block">
 	<div class="question"> Question 3. WAF to find min value from 2 numbers using ternary operators</div> 
-	<div id="clickme1" class="click-btn">Click Here</div>
+	<div id="clickme1" class="click-btn">See Answer</div>
 	
 </div>
 <div class="ans-block">
@@ -172,13 +172,13 @@ var userName = "Vasanti Pawar";
 			<code>
 function teenage(){
 if( age > 12 && age < 19){
-	document.getElementById("ansdiv2").innerHTML = "Heyy ya!!, you are a Teenager!";
+	alert("Heyy ya!!, you are a Teenager!");
 }else if( age < 13){
 
-	document.getElementById("ansdiv2").innerHTML = "You are a kid!";
+	alert("You are a kid!");
 }else{
 
-	document.getElementById("ansdiv2").innerHTML = "Ohhh... you are too old..";
+	alert("Ohhh... you are too old..");
 }	
 }
 teenage(25);
@@ -263,21 +263,21 @@ todaysDay();
 </div>
 
 <script>
-	var acc = document.getElementsByClassName("ans-btn");
-	var i;
-	for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			this.innerHTML = "Hide Me";
-			var answer = this.nextElementSibling;
-			if (answer.style.display === "block") {
-				answer.style.display = "none";
-				this.innerHTML = "See Answer";
-			} else {
-				answer.style.display = "block";
-			}
-		});
-	}
+	// var acc = document.getElementsByClassName("ans-btn");
+	// var i;
+	// for (i = 0; i < acc.length; i++) {
+	// 	acc[i].addEventListener("click", function() {
+	// 		this.classList.toggle("active");
+	// 		this.innerHTML = "Hide Me";
+	// 		var answer = this.nextElementSibling;
+	// 		if (answer.style.display === "block") {
+	// 			answer.style.display = "none";
+	// 			this.innerHTML = "See Answer";
+	// 		} else {
+	// 			answer.style.display = "block";
+	// 		}
+	// 	});
+	// }
 
 	
 	document.querySelector("#clickme1").addEventListener("click",function(){
@@ -292,9 +292,9 @@ todaysDay();
 		};
 
 
-		alert( min(8, 15) );
-		alert( min('eight', 15) );
-		alert( min(8, 8) );
+		alert( min(4, 22) );
+		alert( min('four', 20) );
+		alert( min(9, 9) );
 	});
 
 	document.querySelector("#clickme2").addEventListener("click",function(){
