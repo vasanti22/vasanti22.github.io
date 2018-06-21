@@ -165,6 +165,97 @@ var userName = "Vasanti Pawar";
 			</code>
 		</pre>	
 	</div>
+
+	<div class="ans-block">
+		<div class="question"> Question 12. Implement previous assignments (Take any 5 examples).</div>
+		<pre>
+			<code>
+function teenage(){
+if( age > 12 && age < 19){
+	document.getElementById("ansdiv2").innerHTML = "Heyy ya!!, you are a Teenager!";
+}else if( age < 13){
+
+	document.getElementById("ansdiv2").innerHTML = "You are a kid!";
+}else{
+
+	document.getElementById("ansdiv2").innerHTML = "Ohhh... you are too old..";
+}	
+}
+teenage(25);
+
+======================================================================
+
+function bgChage(){
+	var date = new Date();
+	var hour = date.getHours();
+
+	if( hour >= 0 && hour < 16){
+		setcolor = 'yellow';
+		alert("Good Mornig !!")
+	}else if( hour >= 16 && hour < 19){
+		setcolor = 'blue';
+		alert("Good Evening !!")
+	}else{
+		setcolor = 'black';
+		alert("Good Night !!")
+	}
+
+	document.getElementsByTagName('body')[0].style.backgroundColor = setcolor;
+}
+bgChange();
+
+==================================================================================
+
+function todaysDay(){
+var todayDate = new Date();
+var day = todayDate.getDay();
+
+switch(day){
+	case 0:
+	case 6:
+	alert('Switch: Woooww... Its a Weekend!!! ');
+	break;
+
+	case 1:
+	alert('Switch: Noooo... Monday :( ');
+	break;
+
+	case 2:
+	alert("Switch: Hell.. It's Tuesday only");
+	break;
+
+	case 3:
+	alert('Switch: Wednesday...');
+	break;
+
+	case 4:
+	alert('Switch: Thursday, weekend is coming!');
+	break;
+
+	case 5:
+	alert('Switch: Finally, its FRIDAY...!!');
+	break;
+}
+
+
+if( day == 0 || day == 6){
+	alert('Woooww... Its a Weekend!!!');
+}else if(day == 1){
+	alert('Noooo... Monday :(');
+}else if(day == 2){
+	alert("Hell.. It's Tuesday only");	
+}else if(day == 3){
+	alert(' Wednesday...');
+}else if(day == 4){
+	alert('Thursday, weekend is coming!');
+}else if(day == 5){
+	alert('Finally, its FRIDAY...!!');
+}
+}
+todaysDay();
+			</code>
+		</pre>	
+	</div>
 </div>
 
 </div>
@@ -301,7 +392,7 @@ var userName = "Vasanti Pawar";
 		alert( 'Fibonacci Series: ' + fibon(digit) );
 
 	});
-	
+
 //IIFE
 	var userName = "Vasanti Pawar"; 
 (function (name) 
