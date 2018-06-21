@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Menu</title>
+</head>
+<style type="text/css">
+*{margin:0;padding: 0;}
+body{font-family: georgia;margin: 0;padding: 0;}
+header{position:relative;background:#000;color:#fff;}
+.menu ul{clear: both;padding:0;margin:0;}
+.menu-link{display: inline-block;position: relative;width:24%;text-align: center;}
+.menu-link a{color:#fff;padding: 20px 5px; position: relative;display: block;}
+.submenu, .submenu-two{display: none;position: absolute; top:56px; background: #333; margin: 0; padding: 0;width: 100%;}
+.submenu > li, .submenu-two > li{width:auto;display: block;}
+ul.submenu-two{left:100%;top:0;}
+.active{display: block;}
+
+</style>
+<body>
+<header>
+	<div class="menu" id="menu">
+		<ul>
+			<li class="menu-link"><a href="">Home</a></li>
+			<li class="menu-link">
+				<a href="">Products</a>
+				<ul class="submenu">
+					<li class="menu-link">
+						<a href="">2nd one</a>
+						<ul class="submenu-two">
+							<li class="menu-link"><a href="">3rd level one</a></li>
+							<li class="menu-link"><a href="">3rd level two</a></li>
+							<li class="menu-link"><a href="">3rd level three</a></li>
+							<li class="menu-link"><a href="">3rd level Four</a></li>
+						</ul>
+					</li>
+					<li class="menu-link">
+						<a href="">2nd two</a>	
+					</li>
+				</ul>
+			</li>
+			<li class="menu-link"><a href="">Contact Us</a></li>
+			<li class="menu-link"><a href="">Privacy Policy</a></li>
+		</ul>
+		</div>
+</header>
+	<script type="text/javascript">
+		var navMenu = document.getElementById("menu");
+		var allMenus = navMenu.querySelectorAll("li");
+		for (var i = 0; i < allMenus.length; i++) {
+			allMenus[i].addEventListener('mouseenter',function(){
+				this.style.backgroundColor = "#2467af";
+				this.style.color = "#000";
+				if(this.childNodes.length > 3){ 
+					var getUl = this.querySelectorAll("ul")[0]; 
+					getUl.classList.add('active'); 
+					console.log(getUl);
+				}
+			});
+			allMenus[i].addEventListener('mouseleave',function(){
+				this.style.backgroundColor = "transparent";
+				this.style.color = "#fff";
+				if(this.childNodes.length > 3){				
+					var getUl = this.querySelectorAll("ul")[0];
+					getUl.classList.remove('active');
+				}
+			});
+		}
+
+	</script>
+</body>
+</html>
