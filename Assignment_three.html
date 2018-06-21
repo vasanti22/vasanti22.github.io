@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+	
+	<style>
+	body{font-family: georgia;}
+	* {margin: 0; padding: 0;}
+	.title {font-size: 38px; text-align: center; font-weight: 600; padding: 30px 0; } 
+	.test-two{overflow: hidden; margin: 0 auto; }
+	.wrapper{max-width:900px;margin: 0 auto;}
+	.ans-block{background:  #ddd;margin: 10px;padding:  10px;display:  block;overflow:  hidden;}
+	.ans-block .answer, #ansdiv,#ansdiv2{color: #fff;font-size: 14px;display:  inline-block;padding: 10px;background:  #555;margin:  20px 0;border-radius:  5px;}
+	.ans-block .answer, #ansdiv{ display: none; }
+	.ans-btn{cursor: pointer;display: inline-block;color: #FFF;background: #ea4545;border-radius: 4px;padding: 10px;font-size: 14px;font-family:  arial;font-weight:  600;}
+	.click-btn{cursor: pointer;padding: 5px;color: #fff;background-color: #ea4545;border-radius: 4px;text-align: center;display: inline-block;}
+	.question {font-size: 17px; font-weight: 700; margin: 10px 0; } 
+	#ansdiv3 {border-radius: 0; overflow-y: auto; background: #000; } 
+	
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="title">Assignment 3</div>
+
+		<div class="assntabs">
+			<div class="test-two" id="assignment-one">
+				<div class="ans-block">
+					<div class="question"> Question 1. Q1:What is the difference between following 2 functions if any?</div> 
+					
+					
+					<pre>
+						<code>
+function checkAge(age) 
+{
+	if (age > 18) 
+	{
+		return true;
+	} 
+	else 
+	{
+		return confirm('Did parents allow you?');
+	}
+}
+
+function checkAge(age) 
+{
+	if (age > 18) 
+	{
+		return true;
+	}
+	return confirm('Did parents allow you?');
+}				
+						</code>
+					</pre>
+
+
+					<div class="answer">
+						1. Both function's are same. It will check if the age is grater than 18years return true. Otherwise, confirm 'Did parents allow you?' <br>
+						2. First function is pure 'if-else' statement, when "if block" condition fails it will execute "else block".
+						3. In second function only "if block" is written if condition is false it will execute confirm. There is no need of "else block" as its checking only one condition.
+					</div>
+
+
+				</div>
+				<div class="ans-block">
+					<div class="question"> Question 2.Re-write code using Ternary operator
+
+						<pre>
+							<code>
+function checkAge(age) {
+if (age > 18) {
+return true;
+} else {
+return confirm('Did parents allow you?');
+}
+}				
+				</code>
+			</pre>
+		</div> 
+
+
+
+		<pre>
+			<code>
+function checkAge(age) {
+if( isNaN(age) ){
+return "Age should be number";
+}else if( age < 0 || age > 100){
+return "Age should be beween 1 to 100";
+}
+else{
+return (age > 18) ? true : confirm('Did parents allow you?');
+} 
+}
+</code>
+</pre>
+
+</div>
+<div class="ans-block">
+	<div class="question"> Question 3. WAF to find min value from 2 numbers using ternary operators</div> 
+	<div id="clickme1" class="click-btn">Click Here</div>
+	
+</div>
+<div class="ans-block">
+	<div class="question"> Question 4. WAF to find prime numbers from 1-100</div> 
+	<div id="clickme2" class="click-btn">Click Here</div>
+	
+</div>
+<div class="ans-block">
+	<div class="question"> Question 5. Difference between Function Declaration & Function Expression</div> 
+	<pre>
+		<code>
+
+1. Function declaration
+function func_declar() {
+//write your code;
+}
+
+2. Function Expression
+var func_expr = function() {
+//write your code;
+}
+
+
+</code>
+</pre>
+</div>
+<div class="ans-block">
+	<div class="question"> Question 6.  WAF to multiply 2/multiple numbers. (use function parameters/arguments)</div> 
+	<div id="clickme3" class="click-btn">Click Here</div>
+	
+</div>
+<div class="ans-block">
+	<div class="question"> Question 7. WAF To check if palindrome </div>
+	<div id="clickme4" class="click-btn">Click Here</div>
+</div>
+<div class="ans-block">
+	<div class="question"> Question 8. WAF: To generate fibonacci series upto user entered number eg: if user enters 6. output: 1 1 2 3 5 8</div>
+	<div id="clickme5" class="click-btn">Click Here</div>
+
+</div>
+<div class="ans-block">
+	<div class="question"> Question 9.Make a header with navigation bar at 200px from the top of the screen, make the header sticky once you scroll past it</div>
+	<a class="ans-btn" href="https://vasanti22.github.io/assmn1.html" target="_blank">See Answer</a>
+	
+		
+	</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+	var acc = document.getElementsByClassName("ans-btn");
+	var i;
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			this.innerHTML = "Hide Me";
+			var answer = this.nextElementSibling;
+			if (answer.style.display === "block") {
+				answer.style.display = "none";
+				this.innerHTML = "See Answer";
+			} else {
+				answer.style.display = "block";
+			}
+		});
+	}
+
+	
+	document.querySelector("#clickme1").addEventListener("click",function(){
+		var min = function (a,b) {
+			if( isNaN(a) || isNaN(b) ){
+				return "Values should be numbers";
+			}else if( a == b){
+				return "Numbers are equal";
+			}else{
+				return "Minimum from "+ a + " & " + b + " is " + ( ( a < b ) ? a : b ); 
+			}
+		};
+
+
+		alert( min(8, 15) );
+		alert( min('eight', 15) );
+		alert( min(8, 8) );
+	});
+
+	document.querySelector("#clickme2").addEventListener("click",function(){
+		var primeNum = function(num) {
+			var primeNum = false;
+			for (var i = 2; i <= num; i++) {
+				if( (num % i == 0) && ( num != i) ){
+					primeNum = false;
+					break;
+				}else{
+					primeNum = true;
+				}
+			}
+
+			if(primeNum){return num;}
+			else{return false;}
+		}
+
+		var primeNumbs = [];
+		for (var i = 1; i <= 100; i++) {
+			if( primeNum(i) ){ primeNumbs.push(i); }
+		}
+		alert( 'Prime Numbers: ' + primeNumbs );
+	});			
+
+
+
+	document.querySelector("#clickme3").addEventListener("click",function(){
+
+		var mul_num = function (){
+			var ans = 1;
+			for (var i = 0; i < arguments.length; i++) {
+				ans *= arguments[i];
+			}
+			return ans;
+		}
+
+		alert( mul_num(2,2) );
+		alert( mul_num(4,5,1) );
+		alert( mul_num(25,90,4,1) );
+		
+	});	
+
+	document.querySelector("#clickme4").addEventListener("click",function(){		
+
+		function isPalindrome(my_string) {
+
+			if( !my_string ){ return false; }
+			var count = 0; 
+			var midOfmy_string = Math.floor(my_string.length/2); 
+			var check = (my_string.length % 2) ? (midOfmy_string+1) : midOfmy_string; 
+			for (var i = 0, j = my_string.length-1; i <= midOfmy_string, j >= midOfmy_string; i++, j--) {
+
+				if( my_string[i] == my_string[j] ){
+					count++;
+				}			
+			}
+
+			return (count == check) ? true : false;
+		}
+		var my_string = prompt("Enter string to check if Palindrome or not:");
+		if( isPalindrome(my_string) ){alert(my_string + " is Palindrome");}
+		else{alert(my_string + " is not a Palindrome");}	
+
+
+	});	
+
+
+	document.querySelector("#clickme5").addEventListener("click",function(){		
+
+		var fibon = function(digit) {
+			var firstNumb = 1, secNumb = 1; 
+			var fibo = [firstNumb, secNumb]; 
+			if( digit == 1 ){
+				fibo = [firstNumb];
+			}
+
+			else if( digit > 2 ){
+				var newNumb;
+				for (var i = 3; i <= digit; i++) { 
+					newNumb = firstNumb + secNumb; 
+					fibo.push(newNumb); 
+					firstNumb = secNumb; 
+					secNumb = 	newNumb;	
+				}
+			}
+			return fibo;
+		}
+
+		do{
+			var digit = prompt("Enter numbers :", '7');
+		}while( isNaN(digit) || digit <= 0 );
+
+
+		alert( 'Fibonacci Series: ' + fibon(digit) );
+
+	});
+
+	
+
+</script>
+</body>
+</html>
